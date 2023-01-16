@@ -1,11 +1,30 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 import logo from '../../assets/img/logo.svg';
 import { ABOUT_ROUTE, CONTACTS_ROUTE, PRICE_ROUTE, SHOP_ROUTE } from '../../utils/consts';
 import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
+
+  const headerButtons = [
+    {
+      SHOP_ROUTE,
+      title: 'Продукция',
+    },
+    {
+      ABOUT_ROUTE,
+      title: 'О салоне',
+    },
+    {
+      PRICE_ROUTE,
+      title: 'Цены',
+    },
+    {
+      CONTACTS_ROUTE,
+      title: 'Контакты',
+    },
+  ];
 
   return (
     <div className={styles.header}>
@@ -20,10 +39,11 @@ const Header: React.FC = () => {
       </div>
       <div className={styles.menu}>
         <ul>
-          <li onClick={() => navigate(SHOP_ROUTE)}>Продукция</li>
-          <li onClick={() => navigate(ABOUT_ROUTE)}>О салоне</li>
-          <li onClick={() => navigate(CONTACTS_ROUTE)}>Контакты</li>
-          <li onClick={() => navigate(PRICE_ROUTE)}>Цены</li>
+          {headerButtons.map((arr, index: number) => (
+            <li key={index} onClick={() => navigate(Object.values(arr)[0])}>
+              {arr.title}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import ReactDOM from 'react-dom/client';
 import './index.module.scss';
 import App from './App';
+
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');
@@ -10,8 +13,11 @@ if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
 
   root.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
+    // подключаем глобальное хранилище ко всему приложению при помощи redux toolkit store
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>,
   );
 }
