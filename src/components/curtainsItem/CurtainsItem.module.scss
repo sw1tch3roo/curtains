@@ -10,6 +10,10 @@
 
   // если ширина экрана станет меньше 1400px, тогда количество колонок станет 3
   @media (max-width: 1600px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1150px) {
     grid-template-columns: repeat(2, 1fr);
   }
 

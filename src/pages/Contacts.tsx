@@ -1,7 +1,8 @@
 import React from 'react';
+import ContactsBlock from '../components/contacts/ContactsBlock';
 
 const Contacts: React.FC = () => {
-  return <div>Это вообще-то контакты</div>;
+  return <ContactsBlock />;
 };
 
 export default Contacts;
