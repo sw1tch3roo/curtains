@@ -1,20 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import curtains from '../.././assets/curtains.json';
-// import axios from 'axios';
+import axios from 'axios';
 
-// export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params, thunkApi) => {
-//   // const { category, sortBy, order, search, currentPage } = params; // деструктуризируем
+export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params, thunkApi) => {
+  // const { category, sortBy, order, search, currentPage } = params; // деструктуризируем
 
-//   const { data } = await axios.get(
-//     `https://632cad725568d3cad88ad212.mockapi.io/items?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&${search}`,
-//   );
+  const { data } = await axios.get(`https://63c7ed555c0760f69ac121f6.mockapi.io/products`);
 
-//   if (data.length === 0) {
-//     return thunkApi.rejectWithValue('Товаров нет.');
-//   }
+  if (data.length === 0) {
+    return thunkApi.rejectWithValue('Товаров нет.');
+  }
 
-//   return thunkApi.fulfillWithValue(data);
-// });
+  return thunkApi.fulfillWithValue(data);
+});
 
 const initialState = {
   // изначальное состояние
@@ -33,26 +31,26 @@ export const itemsSlice = createSlice({
     },
   },
 
-  // extraReducers: {
-  //   [fetchItems.pending]: (state, action) => {
-  //     // отправка запроса
-  //     state.status = 'loading';
-  //     state.items = []; // очищаем старый массив пицц
-  //   },
+  extraReducers: {
+    [fetchItems.pending]: (state, action) => {
+      // отправка запроса
+      state.status = 'loading';
+      state.items = []; // очищаем старый массив пицц
+    },
 
-  //   [fetchItems.fulfilled]: (state, action) => {
-  //     // console.log(action, 'fulfilled');
-  //     state.items = action.payload;
-  //     state.status = 'success';
-  //   },
+    [fetchItems.fulfilled]: (state, action) => {
+      // console.log(action, 'fulfilled');
+      state.items = action.payload;
+      state.status = 'success';
+    },
 
-  //   [fetchItems.rejected]: (state, action) => {
-  //     // console.log(action, 'rejected');
-  //     // ошибка запроса
-  //     state.status = 'error';
-  //     state.items = []; // на всякий случай обнуляем массив
-  //   },
-  // },
+    [fetchItems.rejected]: (state, action) => {
+      // console.log(action, 'rejected');
+      // ошибка запроса
+      state.status = 'error';
+      state.items = []; // на всякий случай обнуляем массив
+    },
+  },
 });
 
 export const itemsSelector = (state) => state.itemsReducer;
