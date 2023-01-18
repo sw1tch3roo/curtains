@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactsBlock from '../components/contacts/ContactsBlock';
+import ContactsBlock from '../components/contactsBlock/ContactsBlock';
 
 const Contacts: React.FC = () => {
   return <ContactsBlock />;
