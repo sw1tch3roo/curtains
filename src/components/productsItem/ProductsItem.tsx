@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import styles from './media_slider.module.scss';
 
 type ProductType = {
   image: string;
+  title: string;
 };
 
 const ProductsItem: React.FC = () => {
@@ -34,8 +36,75 @@ const ProductsItem: React.FC = () => {
   }
 
   return (
-    <div>
-      <img src={product.image} alt="curtains" />
+    <div className={styles.slider_bl_css}>
+      <ul className={styles.slides}>
+        <input type="radio" name="radio-btn" id="img_1" checked={false} />
+        <li className={styles.slide_container}>
+          <div className={styles.slide}>
+            <img alt="Шторы" src={product.image} />
+          </div>
+          <div className={styles.nav}>
+            <label htmlFor="img_6" className={styles.prev}>
+              &#x2039;
+            </label>
+            <label htmlFor="img_2" className={styles.next}>
+              &#x203a;
+            </label>
+          </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img_2" />
+        <li className={styles.slide_container}>
+          <div className={styles.slide}>
+            <img alt="Шторы" src="https://obninsksite.ru/assets/theme/images/blog/slider/2.jpg" />
+          </div>
+          <div className={styles.nav}>
+            <label htmlFor="img_1" className={styles.prev}>
+              &#x2039;
+            </label>
+            <label htmlFor="img_3" className={styles.next}>
+              &#x203a;
+            </label>
+          </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img_3" />
+        <li className={styles.slide_container}>
+          <div className={styles.slide}>
+            <img alt="Шторы" src="https://obninsksite.ru/assets/theme/images/blog/slider/3.jpg" />
+          </div>
+          <div className={styles.nav}>
+            <label htmlFor="img_2" className={styles.prev}>
+              &#x2039;
+            </label>
+            <label htmlFor="img_4" className={styles.next}>
+              &#x203a;
+            </label>
+          </div>
+        </li>
+
+        <input type="radio" name="radio-btn" id="img_4" />
+        <li className={styles.slide_container}>
+          <div className={styles.slide}>
+            <img alt="Шторы" src="https://obninsksite.ru/assets/theme/images/blog/slider/4.jpg" />
+          </div>
+          <div className={styles.nav}>
+            <label htmlFor="img_3" className={styles.prev}>
+              &#x2039;
+            </label>
+            <label htmlFor="img_5" className={styles.next}>
+              &#x203a;
+            </label>
+          </div>
+        </li>
+
+        <li className={styles.nav_dots}>
+          <label htmlFor="img_1" className={styles.nav_dot} id="img_dot_1" />
+          <label htmlFor="img_2" className={styles.nav_dot} id="img_dot_2" />
+          <label htmlFor="img_3" className={styles.nav_dot} id="img_dot_3" />
+          <label htmlFor="img_4" className={styles.nav_dot} id="img_dot_4" />
+        </li>
+      </ul>
     </div>
   );
 };
