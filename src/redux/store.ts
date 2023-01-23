@@ -11,3 +11,6 @@ export const store = configureStore({
     contactsDataReducer,
   },
 });
+
+// export type RootState = ReturnType<typeof itemsReducer>;
+export type AppDispatch = typeof store.dispatch;

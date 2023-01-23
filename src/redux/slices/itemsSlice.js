@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import curtains from '../.././assets/curtains.json';
 import axios from 'axios';
 
 export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params, thunkApi) => {
@@ -16,8 +15,8 @@ export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (para
 
 const initialState = {
   // изначальное состояние
-  items: curtains,
-  status: 'success', // loading | success | error - статусы загрузки
+  items: [],
+  status: 'loading', // loading | success | error - статусы загрузки
 };
 
 export const itemsSlice = createSlice({

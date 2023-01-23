@@ -1,103 +1,107 @@
-.slider {
-  display: block;
+.slider_content {
+  display: flex;
 
-  overflow: hidden;
-  position: relative;
+  .slider {
+    display: block;
 
-  & .slide-list {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-
-    & .slide {
-      flex: 1 0 100%;
-      position: relative;
-
-      & .slide-image {
-        display: flex;
-        margin: 0 auto;
-        max-height: 300px;
-        width: 100%;
-        object-fit: contain;
-      }
-
-      & .slide-title {
-        text-align: center;
-        margin-top: 10px;
-      }
-    }
-  }
-
-  /* DOTS */
-
-  & .dots {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+    overflow: hidden;
     position: relative;
-    z-index: 2;
 
-    & .dot {
-      background-color: #e7e7e7;
-      border-radius: 5px;
-      height: 10px;
-      margin: 5px;
-      width: 10px;
+    & .slide-list {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
 
-      &:hover {
-        cursor: pointer;
-      }
+      & .slide {
+        flex: 1 0 100%;
+        position: relative;
 
-      &.selected {
-        background-color: green;
-      }
-    }
-  }
+        & .slide-image {
+          display: flex;
+          margin: 0 auto;
+          max-height: 500px;
+          // width: 100%;
+          object-fit: contain;
+        }
 
-  /* ARROWS */
-
-  & .arrows {
-    color: white;
-    display: flex;
-    font-size: 30px;
-    justify-content: space-between;
-    height: 100%;
-    position: absolute;
-    top: 30%;
-    width: 100%;
-    z-index: 1;
-
-    & .arrow {
-      height: 30px;
-      width: 30px;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &.left {
-        background-image: url(../../assets/img/arrow.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-left: 5px;
-
-        &:hover {
-          border-radius: 50%;
-          background-color: rgb(200, 200, 200);
+        & .slide-title {
+          text-align: center;
+          margin-top: 10px;
         }
       }
+    }
 
-      &.right {
-        background-image: url(../../assets/img/arrow.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-right: 5px;
-        transform: rotate(180deg);
+    /* DOTS */
+
+    & .dots {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      position: relative;
+      z-index: 2;
+
+      & .dot {
+        background-color: #e7e7e7;
+        border-radius: 5px;
+        height: 10px;
+        margin: 5px;
+        width: 10px;
 
         &:hover {
-          border-radius: 50%;
-          background-color: rgb(200, 200, 200);
+          cursor: pointer;
+        }
+
+        &.selected {
+          background-color: green;
+        }
+      }
+    }
+
+    /* ARROWS */
+
+    & .arrows {
+      color: white;
+      display: flex;
+      font-size: 30px;
+      justify-content: space-around;
+      // height: 100%;
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      z-index: 1;
+
+      & .arrow {
+        height: 30px;
+        width: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.left {
+          background-image: url(../../assets/img/arrow.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          margin-left: 5px;
+          transform: rotate(180deg);
+
+          &:hover {
+            border-radius: 50%;
+            background-color: rgb(200, 200, 200);
+          }
+        }
+
+        &.right {
+          background-image: url(../../assets/img/arrow.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          margin-right: 5px;
+
+          &:hover {
+            border-radius: 50%;
+            background-color: rgb(200, 200, 200);
+          }
         }
       }
     }

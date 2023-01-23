@@ -21,10 +21,8 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
 
   React.useEffect(() => {
     const loadData = async () => {
-      // const images = await getImages(productId);
+      const images = await getImages(productId);
 
-      const images = await getImages();
-      console.log(images);
       setItems(images);
     };
     loadData();
@@ -84,7 +82,7 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
   }, [items.length, slide]); // when images uploaded or slide changed manually we start timer
 
   return (
-    <div>
+    <div className="slider_content">
       <div
         style={{ width, height }}
         className="slider"
