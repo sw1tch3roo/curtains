@@ -1,9 +1,11 @@
 .slider_content {
-  display: flex;
+  // display: flex;
+  // height: 50%;
+  // width: 50%;
+  // border: 1px solid rgb(150, 150, 150);
 
   .slider {
     display: block;
-
     overflow: hidden;
     position: relative;
 
@@ -20,8 +22,10 @@
         & .slide-image {
           display: flex;
           margin: 0 auto;
-          max-height: 500px;
-          // width: 100%;
+          max-height: 400px;
+          max-width: 700px;
+          width: 500px;
+          height: 500px;
           object-fit: contain;
         }
 
@@ -37,7 +41,6 @@
     & .dots {
       display: flex;
       justify-content: center;
-      padding: 20px 0;
       position: relative;
       z-index: 2;
 
@@ -53,7 +56,7 @@
         }
 
         &.selected {
-          background-color: green;
+          background-color: rgb(150, 150, 150);
         }
       }
     }
@@ -61,47 +64,39 @@
     /* ARROWS */
 
     & .arrows {
-      color: white;
+      color: black;
       display: flex;
       font-size: 30px;
       justify-content: space-around;
-      // height: 100%;
+      height: 100%;
       position: absolute;
       top: 40%;
       width: 100%;
       z-index: 1;
 
       & .arrow {
-        height: 30px;
-        width: 30px;
+        height: 50px;
+        width: 50px;
 
         &:hover {
           cursor: pointer;
+          border-radius: 50%;
+          background-color: rgb(200, 200, 200);
         }
 
         &.left {
           background-image: url(../../assets/img/arrow.svg);
           background-repeat: no-repeat;
           background-size: contain;
-          margin-left: 5px;
+          // margin-left: 5px;
           transform: rotate(180deg);
-
-          &:hover {
-            border-radius: 50%;
-            background-color: rgb(200, 200, 200);
-          }
         }
 
         &.right {
           background-image: url(../../assets/img/arrow.svg);
           background-repeat: no-repeat;
           background-size: contain;
-          margin-right: 5px;
-
-          &:hover {
-            border-radius: 50%;
-            background-color: rgb(200, 200, 200);
-          }
+          // margin-right: 5px;
         }
       }
     }

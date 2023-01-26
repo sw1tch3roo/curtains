@@ -3,6 +3,8 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import MediaSlider from '../mediaSlider/MediaSlider';
 
+import styles from './ProductsItem.module.scss';
+
 type ProductType = {
   image: string;
   title: string;
@@ -35,7 +37,38 @@ const ProductsItem: React.FC = () => {
     return <>Загрузка...</>; // возвращаем реакт-элемент
   }
 
-  return <MediaSlider />;
+  return (
+    <div className={styles.main_content}>
+      <div className={styles.slider_block}>
+        <MediaSlider />
+      </div>
+      <div className={styles.characteristics_block}>
+        <div>
+          <h2>Характеристика</h2>
+        </div>
+        <div className={styles.characteristics}>
+          <dl className={styles.characteristics}>
+            <div className={styles.characteristic}>
+              <dt className={styles.characteristic_key}>Цветовая палитра</dt>
+              <dd className={styles.characteristic_value}>Бежевый</dd>
+            </div>
+            <div className={styles.characteristic}>
+              <dt className={styles.characteristic_key}>Цветовая палитра</dt>
+              <dd className={styles.characteristic_value}>Бежевый</dd>
+            </div>
+            <div className={styles.characteristic}>
+              <dt className={styles.characteristic_key}>Цветовая палитра</dt>
+              <dd className={styles.characteristic_value}>Бежевый</dd>
+            </div>
+            <div className={styles.characteristic}>
+              <dt className={styles.characteristic_key}>Цветовая палитра</dt>
+              <dd className={styles.characteristic_value}>Бежевый</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProductsItem;

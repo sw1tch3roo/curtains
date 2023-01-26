@@ -81,6 +81,10 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
     };
   }, [items.length, slide]); // when images uploaded or slide changed manually we start timer
 
+  if (!items) {
+    <div>Загрузка...</div>;
+  }
+
   return (
     <div className="slider_content">
       <div
