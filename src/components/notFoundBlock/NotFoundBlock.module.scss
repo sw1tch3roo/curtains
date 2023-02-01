@@ -1,14 +1,16 @@
 .main {
-  padding: 100px;
+  display: block;
   text-align: center;
-  margin: 0 auto;
+  padding: 100px;
 
-  span {
-    font-size: 72px;
+  .text {
+    span {
+      font-size: 72px;
+    }
   }
-}
 
-.description {
-  font-size: 20px;
-  color: #999;
+  .description {
+    font-size: 20px;
+    color: #999;
+  }
 }

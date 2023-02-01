@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import MediaSlider from '../mediaSlider/MediaSlider';
+import Loader from '../UI/loader/Loader';
 
 import styles from './ProductsItem.module.scss';
 
@@ -34,7 +35,7 @@ const ProductsItem: React.FC = () => {
 
   if (!product) {
     // делаем отрисовку до загрузки пиццы
-    return <>Загрузка...</>; // возвращаем реакт-элемент
+    return <Loader />; // возвращаем реакт-элемент
   }
 
   return (

@@ -5,6 +5,7 @@ import { fetchItems, itemsSelector } from '../../redux/slices/itemsSlice';
 import styles from '../curtainsItem/CurtainsItem.module.scss';
 import CurtainsItem from '../curtainsItem/CurtainsItem';
 import { AppDispatch } from '../../redux/store';
+import Loader from '../UI/loader/Loader';
 
 const CurtainsBlock: React.FC = () => {
   const { items, status } = useSelector(itemsSelector);
@@ -32,9 +33,7 @@ const CurtainsBlock: React.FC = () => {
           </p>
         </div>
       ) : (
-        <div className={styles.portfolio_wrap}>
-          {status === 'loading' ? 'загрузка...' : curtains}
-        </div>
+        <div className={styles.portfolio_wrap}>{status === 'loading' ? <Loader /> : curtains}</div>
       )}
     </div>
   );
