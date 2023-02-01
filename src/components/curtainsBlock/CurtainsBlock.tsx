@@ -33,7 +33,13 @@ const CurtainsBlock: React.FC = () => {
           </p>
         </div>
       ) : (
-        <div className={styles.portfolio_wrap}>{status === 'loading' ? <Loader /> : curtains}</div>
+        <div>
+          {status === 'loading' ? (
+            <Loader />
+          ) : (
+            <div className={styles.portfolio_wrap}>{curtains}</div>
+          )}
+        </div>
       )}
     </div>
   );

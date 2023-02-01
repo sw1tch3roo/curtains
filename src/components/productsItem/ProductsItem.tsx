@@ -35,6 +35,7 @@ const ProductsItem: React.FC = () => {
 
   if (!product) {
     // делаем отрисовку до загрузки пиццы
+
     return <Loader />; // возвращаем реакт-элемент
   }
 
