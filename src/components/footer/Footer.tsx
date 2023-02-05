@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CONTACTS_ROUTE } from '../../utils/consts';
 import './Footer.scss';
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <head>
@@ -33,16 +37,16 @@ const Footer: React.FC = () => {
             <div className="row">
               <ul>
                 <li>
-                  <a href="https://vk.com`">Контакты</a>
+                  <p onClick={() => navigate(CONTACTS_ROUTE)}>Контакты</p>
                 </li>
                 {/* <li>
                   <a href="https://vk.com`">Our Services</a>
                 </li> */}
                 <li>
-                  <a href="https://vk.com`">Политика конфиденциальности</a>
+                  <p onClick={() => navigate(CONTACTS_ROUTE)}>Политика конфиденциальности</p>
                 </li>
                 <li>
-                  <a href="https://vk.com`">Условия и положения</a>
+                  <p onClick={() => navigate(CONTACTS_ROUTE)}>Условия и положения</p>
                 </li>
                 {/* <li>
                   <a href="https://vk.com`">Career</a>
