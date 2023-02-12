@@ -6,6 +6,12 @@ import './Footer.scss';
 const Footer: React.FC = () => {
   const navigate = useNavigate();
 
+  const nav = (route: string) => {
+    window.scrollTo(0, 0); // перемещаем окно в исходное положение
+
+    navigate(route);
+  };
+
   return (
     <>
       <head>
@@ -37,16 +43,16 @@ const Footer: React.FC = () => {
             <div className="row">
               <ul>
                 <li>
-                  <p onClick={() => navigate(CONTACTS_ROUTE)}>Контакты</p>
+                  <p onClick={() => nav(CONTACTS_ROUTE)}>Контакты</p>
                 </li>
                 {/* <li>
                   <a href="https://vk.com`">Our Services</a>
                 </li> */}
                 <li>
-                  <p onClick={() => navigate(CONTACTS_ROUTE)}>Политика конфиденциальности</p>
+                  <p onClick={() => nav(CONTACTS_ROUTE)}>Политика конфиденциальности</p>
                 </li>
                 <li>
-                  <p onClick={() => navigate(CONTACTS_ROUTE)}>Условия и положения</p>
+                  <p onClick={() => nav(CONTACTS_ROUTE)}>Условия и положения</p>
                 </li>
                 {/* <li>
                   <a href="https://vk.com`">Career</a>
