@@ -2,9 +2,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchItems = createAsyncThunk('items/fetchItemsStatus', async (params, thunkApi) => {
-  // const { category, sortBy, order, search, currentPage } = params; // деструктуризируем
+  const { category, sortBy, order, search, currentPage } = params; // деструктуризируем
 
-  const { data } = await axios.get(`https://63c7ed555c0760f69ac121f6.mockapi.io/products`);
+  const { data } = await axios.get(
+    `https://63c7ed555c0760f69ac121f6.mockapi.io/products?page=${currentPage}&limit=6&${category}&sortBy=${sortBy}&order=${order}&${search}`,
+  );
 
   if (data.length === 0) {
     return thunkApi.rejectWithValue('Товаров нет.');

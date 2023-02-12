@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import itemsReducer from './slices/itemsSlice';
 import contactsDataReducer from './slices/contactsSlice';
+import filterReducer from './slices/filterSlice';
 
 // хранилище редакса
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
   reducer: {
     itemsReducer,
     contactsDataReducer,
+    filterReducer,
   },
 });
 

@@ -1,23 +1,23 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchItems, itemsSelector } from '../../redux/slices/itemsSlice';
+import { useSelector } from 'react-redux';
+import { itemsSelector } from '../../redux/slices/itemsSlice';
 
 import styles from '../curtainsItem/CurtainsItem.module.scss';
 import CurtainsItem from '../curtainsItem/CurtainsItem';
-import { AppDispatch } from '../../redux/store';
+// import { AppDispatch } from '../../redux/store';
 import Loader from '../UI/loader/Loader';
 
 const CurtainsBlock: React.FC = () => {
   const { items, status } = useSelector(itemsSelector);
-  const dispatch = useDispatch<AppDispatch>();
+  // const dispatch = useDispatch<AppDispatch>();
 
-  const getItems = async () => {
-    dispatch(fetchItems());
-  };
+  // const getItems = async () => {
+  //   dispatch(fetchItems());
+  // };
 
-  React.useEffect(() => {
-    getItems();
-  }, []);
+  // React.useEffect(() => {
+  //   getItems();
+  // }, []);
 
   const curtains = items.map((curtain: any) => <CurtainsItem key={curtain.id} {...curtain} />);
 
