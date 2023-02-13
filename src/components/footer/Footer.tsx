@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CONTACTS_ROUTE } from '../../utils/consts';
+import { CONTACTS_ROUTE, PRIVACY_ROUTE } from '../../utils/consts';
 import './Footer.scss';
 
 const Footer: React.FC = () => {
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                   <a href="https://vk.com`">Our Services</a>
                 </li> */}
                 <li>
-                  <p onClick={() => nav(CONTACTS_ROUTE)}>Политика конфиденциальности</p>
+                  <p onClick={() => nav(PRIVACY_ROUTE)}>Политика конфиденциальности</p>
                 </li>
                 <li>
                   <p onClick={() => nav(CONTACTS_ROUTE)}>Условия и положения</p>

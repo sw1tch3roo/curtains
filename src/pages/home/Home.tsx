@@ -2,13 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import ProductCategories from '../components/categories/ProductCategories';
-import CurtainsBlock from '../components/curtainsBlock/CurtainsBlock';
-import ProductSort from '../components/sort/ProductSort';
-import Search from '../components/UI/search/Search';
+import ProductCategories from '../../components/categories/ProductCategories';
+import CurtainsBlock from '../../components/curtainsBlock/CurtainsBlock';
+import ProductSort from '../../components/sort/ProductSort';
+import Search from '../../components/UI/search/Search';
 
-import { filterSelector, searchSelector } from '../redux/slices/filterSlice';
-import { fetchItems } from '../redux/slices/itemsSlice';
+import { filterSelector, searchSelector } from '../../redux/slices/filterSlice';
+import { fetchItems } from '../../redux/slices/itemsSlice';
 
 import qs from 'qs';
 

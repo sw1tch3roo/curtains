@@ -49,7 +49,7 @@ export const contactsSlice = createSlice({
   },
 });
 
-export const contactsDataSelector = (state) => state.contactsDataReducer;
+export const contactsDataSelector = (state: any) => state.contactsDataReducer;
 
 export const { setContactsData } = contactsSlice.actions;
 // экспортированные методы нами же созданные
