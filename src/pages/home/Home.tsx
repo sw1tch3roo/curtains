@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import ProductCategories from '../../components/categories/ProductCategories';
 import CurtainsBlock from '../../components/curtainsBlock/CurtainsBlock';
-import ProductSort from '../../components/sort/ProductSort';
+import ProductSort, { listOfSort } from '../../components/sort/ProductSort';
 import Search from '../../components/UI/search/Search';
 
 import { filterSelector, searchSelector } from '../../redux/slices/filterSlice';

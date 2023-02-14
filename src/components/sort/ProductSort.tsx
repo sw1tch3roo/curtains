@@ -4,32 +4,45 @@ import { changeSort, filterSortSelector } from '../../redux/slices/filterSlice';
 
 import './ProductSort.scss';
 
-interface SortItem {
-  name: string;
-  sortProperty: string;
+enum SortPropertyEnum {
+  TITLE_DESC = 'title',
+  TITLE_ASC = '-title',
 }
+
+type Sort = {
+  name: string;
+  sortProperty: SortPropertyEnum;
+};
 
 type PopupClick = MouseEvent & {
   path: Node[];
 };
 
-export const listOfSort: SortItem[] = [
-  { name: 'по алфавиту ↓', sortProperty: 'title' },
-  { name: 'по алфавиту ↑', sortProperty: '-title' },
+export const listOfSort: Sort[] = [
+  { name: 'по алфавиту ↓', sortProperty: SortPropertyEnum.TITLE_DESC },
+  { name: 'по алфавиту ↑', sortProperty: SortPropertyEnum.TITLE_ASC },
 ];
 
-export const ProductSort: React.FC = () => {
+export const ProductSort: React.FC = React.memo(() => {
   const [isOpenPopup, setIsOpenPopup] = React.useState(false); // pop-up окно сортировки
   const sortRef = React.useRef<HTMLDivElement>(null); // весь компонент сортировки
 
   const activeSort = useSelector(filterSortSelector);
   const dispatch = useDispatch();
 
+  const onClickListItem = (object: Sort) => {
+    dispatch(changeSort(object));
+    // вытаскиваем значение, по которому будем производить сортировку
+    setIsOpenPopup(false);
+  };
+
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const _event = event as PopupClick;
 
-      if (sortRef.current && !_event.path.includes(sortRef.current)) {
+      const path = _event.path || (_event.composedPath && _event.composedPath());
+
+      if (sortRef.current && !path.includes(sortRef.current)) {
         // если клик произведен в не области попап-окна
         setIsOpenPopup(false);
         // console.log('click outside');
@@ -70,11 +83,7 @@ export const ProductSort: React.FC = () => {
               return (
                 <li
                   key={index}
-                  onClick={() => {
-                    dispatch(changeSort(object));
-                    // вытаскиваем значение, по которому будем производить сортировку
-                    setIsOpenPopup(false);
-                  }}
+                  onClick={() => onClickListItem(object)}
                   className={activeSort.sortProperty === object.sortProperty ? 'active' : ''}
                   // сравниваем значение из родителя и дочернего компонента
                 >
@@ -87,6 +96,6 @@ export const ProductSort: React.FC = () => {
       )}
     </div>
   );
-};
+});
 
 export default ProductSort;

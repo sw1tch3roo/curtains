@@ -8,23 +8,11 @@ const Footer: React.FC = () => {
 
   const nav = (route: string) => {
     window.scrollTo(0, 0); // перемещаем окно в исходное положение
-
     navigate(route);
   };
 
   return (
-    <>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <div>
       <div className="main_content">
         <footer>
           <div className="footer">
@@ -64,7 +52,7 @@ const Footer: React.FC = () => {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   );
 };
 
