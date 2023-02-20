@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sw1tch3roo.github.io/",
+  "homepage": "https://sw1tch3roo.github.io/curtains",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@splidejs/splide": "^4.1.4",
@@ -59,5 +59,19 @@
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.7"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sw1tch3roo/curtains.git"
+  },
+  "keywords": [
+    "aura"
+  ],
+  "author": "sw1tch3roo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sw1tch3roo/curtains/issues"
   }
 }
