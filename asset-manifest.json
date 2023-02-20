@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.49cb5a97.css",
-    "main.js": "/static/js/main.3e9e0d71.js",
-    "static/media/mail_logo.svg": "/static/media/mail_logo.35507a34bf7f04e7f30f342bc9e68461.svg",
-    "static/media/logo.svg": "/static/media/logo.29db191f36d99a799e6d39531b9772da.svg",
-    "static/media/phone_logo.svg": "/static/media/phone_logo.1fe84cb3fa92f1b22822c05f134cea19.svg",
-    "static/media/telegram_logo.svg": "/static/media/telegram_logo.966a68cc81e4228bec68a66cda6dba5c.svg",
-    "index.html": "/index.html",
-    "static/media/arrow.svg": "/static/media/arrow.e3ad331dffa9cab33655.svg",
-    "main.49cb5a97.css.map": "/static/css/main.49cb5a97.css.map",
-    "main.3e9e0d71.js.map": "/static/js/main.3e9e0d71.js.map"
+    "main.css": "/curtains/static/css/main.9bcefef3.css",
+    "main.js": "/curtains/static/js/main.4ab27de8.js",
+    "static/media/mail_logo.svg": "/curtains/static/media/mail_logo.35507a34bf7f04e7f30f342bc9e68461.svg",
+    "static/media/logo.svg": "/curtains/static/media/logo.29db191f36d99a799e6d39531b9772da.svg",
+    "static/media/phone_logo.svg": "/curtains/static/media/phone_logo.1fe84cb3fa92f1b22822c05f134cea19.svg",
+    "static/media/telegram_logo.svg": "/curtains/static/media/telegram_logo.966a68cc81e4228bec68a66cda6dba5c.svg",
+    "index.html": "/curtains/index.html",
+    "static/media/arrow.svg": "/curtains/static/media/arrow.e3ad331dffa9cab33655.svg",
+    "main.9bcefef3.css.map": "/curtains/static/css/main.9bcefef3.css.map",
+    "main.4ab27de8.js.map": "/curtains/static/js/main.4ab27de8.js.map"
   },
   "entrypoints": [
-    "static/css/main.49cb5a97.css",
-    "static/js/main.3e9e0d71.js"
+    "static/css/main.9bcefef3.css",
+    "static/js/main.4ab27de8.js"
   ]
 }
