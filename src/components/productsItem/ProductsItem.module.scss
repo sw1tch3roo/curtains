@@ -1,0 +1,115 @@
+.content {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  position: relative;
+}
+
+.main_content {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.slider_block {
+  display: block;
+
+  // border: 1px solid rgb(150, 150, 150);
+}
+
+.characteristics_block {
+  display: block;
+  text-align: center;
+  width: 50vw;
+  height: 50vh;
+  margin: 0px 50px 0 50px;
+  max-height: 300px;
+
+  @media (max-width: 1000px) {
+    overflow: auto;
+    margin: 25px;
+  }
+
+  .characteristics {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: justify;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-top: 0;
+
+    .characteristic {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      border-bottom: 1px dashed #d8d8d8;
+
+      .characteristic_key {
+        display: flex;
+        width: 100%;
+        text-align: left;
+        flex-direction: row;
+        align-items: baseline;
+        flex-wrap: nowrap;
+        margin-right: 8px;
+        font-weight: 400;
+        font-style: normal;
+
+        &:after {
+          display: block;
+          flex: 1 1 0px;
+          margin: 0 8px;
+          content: '';
+        }
+      }
+
+      .characteristic_value {
+        display: flex;
+        width: 100%;
+        text-align: right;
+        justify-content: right;
+        flex-direction: row;
+        margin-inline-start: unset;
+        align-items: baseline;
+        flex-wrap: nowrap;
+        margin: 0;
+        font-weight: 400;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+.description_block {
+  display: block;
+  position: relative;
+  margin: 0 50px 0 50px;
+
+  .description_name {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 32px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    list-style: none;
+
+    display: inline-block;
+  }
+
+  .description_text {
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+    color: rgb(0, 0, 0);
+    opacity: 0.95;
+  }
+}

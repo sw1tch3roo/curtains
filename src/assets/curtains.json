@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "image": "https://shop-cdn1.vigbo.tech/shops/42470/products/19373946/images/2-090e8d8f4d283a30e6cc740006933991.JPG",
+    "title": "Французские шторы",
+    "price": 803
+  },
+  {
+    "id": 1,
+    "image": "https://domshtor.ru/wp-content/uploads/2018/03/01-243-10-Omma-Svetlo-Seryi-1-2.jpg",
+    "title": "Итальянские шторы",
+    "price": 803
+  },
+  {
+    "id": 2,
+    "image": "https://domshtor.ru/wp-content/uploads/2018/03/01-243-10-Omma-Svetlo-Seryi-1-2.jpg",
+    "title": "Испанские шторы",
+    "price": 803
+  },
+  {
+    "id": 3,
+    "image": "https://domshtor.ru/wp-content/uploads/2018/03/01-243-10-Omma-Svetlo-Seryi-1-2.jpg",
+    "title": "Пиздатые штори",
+    "price": 803
+  }
+]
