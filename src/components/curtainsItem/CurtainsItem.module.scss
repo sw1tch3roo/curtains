@@ -13,7 +13,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -22,8 +22,8 @@
   }
 }
 .portfolio_item {
-  padding: 10px 10px;
-  margin: 20px 40px;
+  padding: 1em 1em;
+  margin: 1em 2em;
 }
 .portfolio_item a {
   display: block;

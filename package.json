@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sw1tch3roo.github.io/curtains/",
+  "homepage": "https://sw1tch3roo.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@splidejs/splide": "^4.1.4",
