@@ -1,14 +1,13 @@
 import React from 'react';
 import debounce from 'lodash.debounce';
 
-import { useDispatch } from 'react-redux';
-
 import styles from './Search.module.scss';
 import { changeSearchValue } from '../../../redux/slices/filterSlice';
+import { useAppDispatch } from '../../../redux/store';
 
 const Search: React.FC = () => {
   const [value, setValue] = React.useState<string>(''); // локальный стейт для быстрого отображения данных в инпуте
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const inputRef = React.useRef<HTMLInputElement>(null); // для выбора DOM-элемента
   // reference - ссылка

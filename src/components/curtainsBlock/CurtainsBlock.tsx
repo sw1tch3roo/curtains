@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { itemsSelector } from '../../redux/slices/itemsSlice';
+import { Items, itemsSelector } from '../../redux/slices/itemsSlice';
 
 import styles from '../curtainsItem/CurtainsItem.module.scss';
 import CurtainsItem from '../curtainsItem/CurtainsItem';
@@ -19,7 +19,7 @@ const CurtainsBlock: React.FC = () => {
   //   getItems();
   // }, []);
 
-  const curtains = items.map((curtain: any) => <CurtainsItem key={curtain.id} {...curtain} />);
+  const curtains = items.map((curtain: Items) => <CurtainsItem key={curtain.id} {...curtain} />);
 
   return (
     <div>

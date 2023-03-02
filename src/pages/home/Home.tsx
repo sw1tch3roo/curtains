@@ -1,10 +1,10 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import ProductCategories from '../../components/categories/ProductCategories';
 import CurtainsBlock from '../../components/curtainsBlock/CurtainsBlock';
-import ProductSort, { listOfSort } from '../../components/sort/ProductSort';
+import ProductSort from '../../components/sort/ProductSort';
 import Search from '../../components/UI/search/Search';
 
 import { filterSelector, searchSelector } from '../../redux/slices/filterSlice';
@@ -13,20 +13,17 @@ import { fetchItems } from '../../redux/slices/itemsSlice';
 import qs from 'qs';
 
 import styles from './Home.module.scss';
+import { useAppDispatch } from '../../redux/store';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const isSearch = React.useRef<boolean>(false);
   const isMounted = React.useRef<boolean>(false);
 
   // const { items, status } = useSelector(itemsSelector); // массив пицц
 
-  const {
-    category: activeCategory,
-    sort: activeSort,
-    page: currentPage,
-  } = useSelector(filterSelector);
+  const { category: activeCategory, sort: activeSort, currentPage } = useSelector(filterSelector);
 
   const searchValue = useSelector(searchSelector);
 
@@ -44,7 +41,6 @@ const Home: React.FC = () => {
 
     dispatch(
       // все ошибки обработаны в редаксе
-      // @ts-ignore
       fetchItems({
         category,
         sortBy,

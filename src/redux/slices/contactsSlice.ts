@@ -1,9 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import phone_logo from '../../assets/img/phone_logo.svg';
 import mail_logo from '../../assets/img/mail_logo.svg';
 import telegram_logo from '../../assets/img/telegram_logo.svg';
+import { RootState } from '../store';
 
-const contactsData = [
+interface IContactsData {
+  id: number;
+  logo: string;
+  firstTitle: string;
+  secondTitle: string;
+  linkTo: string;
+  linkTitle: string;
+}
+
+const contactsData: IContactsData[] = [
   {
     id: 0,
     logo: phone_logo,
@@ -43,13 +53,13 @@ export const contactsSlice = createSlice({
   initialState, // initialState: initialState  первое состояние (как в useState)
   reducers: {
     // методы, меняющие состояние
-    setContactsData: (state, action) => {
+    setContactsData: (state, action: PayloadAction<IContactsData[]>) => {
       state.contactsData = action.payload;
     },
   },
 });
 
-export const contactsDataSelector = (state: any) => state.contactsDataReducer;
+export const contactsDataSelector = (state: RootState) => state.contactsDataReducer;
 
 export const { setContactsData } = contactsSlice.actions;
 // экспортированные методы нами же созданные

@@ -1,17 +1,24 @@
 .main {
-  display: block;
-  text-align: center;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
 
-  padding: 100px;
+  .content {
+    padding: 100px;
 
-  .text {
-    span {
-      font-size: 72px;
+    .error {
+      // padding: 100px;
+      text-align: center;
+      margin: 0 auto;
+
+      span {
+        font-size: 72px;
+      }
     }
-  }
 
-  .description {
-    font-size: 20px;
-    color: #999;
+    .error_description {
+      font-size: 20px;
+      color: #999;
+    }
   }
 }

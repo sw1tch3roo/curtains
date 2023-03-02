@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import itemsReducer from './slices/itemsSlice';
 import contactsDataReducer from './slices/contactsSlice';
 import filterReducer from './slices/filterSlice';
+import { useDispatch } from 'react-redux';
 
 // хранилище редакса
 export const store = configureStore({
@@ -14,5 +15,5 @@ export const store = configureStore({
   },
 });
 
-// export type RootState = ReturnType<typeof itemsReducer>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export const useAppDispatch: () => typeof store.dispatch = useDispatch;

@@ -1,15 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Items } from '../../redux/slices/itemsSlice';
 import styles from './CurtainsItem.module.scss';
 
-type ICurtainsType = {
-  id: number;
-  image: string;
-  title: string;
-  price: number;
-};
-
-const CurtainsItem: React.FC<ICurtainsType> = ({ id, image, title, price }) => {
+const CurtainsItem: React.FC<Items> = ({ id, image, title, price }) => {
   const logoImage = image[0]; // выводим первое изображение из массива изображений как лого
 
   return (

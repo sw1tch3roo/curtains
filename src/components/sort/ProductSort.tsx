@@ -1,24 +1,20 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { changeSort, filterSortSelector } from '../../redux/slices/filterSlice';
+import { useSelector } from 'react-redux';
+import {
+  changeSort,
+  filterSortSelector,
+  SortPropertyEnum,
+  SortType,
+} from '../../redux/slices/filterSlice';
+import { useAppDispatch } from '../../redux/store';
 
 import './ProductSort.scss';
-
-enum SortPropertyEnum {
-  TITLE_DESC = 'title',
-  TITLE_ASC = '-title',
-}
-
-type Sort = {
-  name: string;
-  sortProperty: SortPropertyEnum;
-};
 
 type PopupClick = MouseEvent & {
   path: Node[];
 };
 
-export const listOfSort: Sort[] = [
+export const listOfSort: SortType[] = [
   { name: 'по алфавиту ↓', sortProperty: SortPropertyEnum.TITLE_DESC },
   { name: 'по алфавиту ↑', sortProperty: SortPropertyEnum.TITLE_ASC },
 ];
@@ -28,9 +24,9 @@ export const ProductSort: React.FC = React.memo(() => {
   const sortRef = React.useRef<HTMLDivElement>(null); // весь компонент сортировки
 
   const activeSort = useSelector(filterSortSelector);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const onClickListItem = (object: Sort) => {
+  const onClickListItem = (object: SortType) => {
     dispatch(changeSort(object));
     // вытаскиваем значение, по которому будем производить сортировку
     setIsOpenPopup(false);
