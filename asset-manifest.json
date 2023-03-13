@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/curtains/static/css/main.da2bb56b.css",
-    "main.js": "/curtains/static/js/main.780bd14d.js",
+    "main.css": "/curtains/static/css/main.40d6a615.css",
+    "main.js": "/curtains/static/js/main.5e1d7d55.js",
     "static/media/mail_logo.svg": "/curtains/static/media/mail_logo.35507a34bf7f04e7f30f342bc9e68461.svg",
     "static/media/logo.svg": "/curtains/static/media/logo.52aac7d30cd228feef3233f7737578ce.svg",
     "static/media/phone_logo.svg": "/curtains/static/media/phone_logo.1fe84cb3fa92f1b22822c05f134cea19.svg",
     "static/media/telegram_logo.svg": "/curtains/static/media/telegram_logo.966a68cc81e4228bec68a66cda6dba5c.svg",
     "index.html": "/curtains/index.html",
     "static/media/arrow.svg": "/curtains/static/media/arrow.c595ab0c8de286d4fbf6.svg",
-    "main.da2bb56b.css.map": "/curtains/static/css/main.da2bb56b.css.map",
-    "main.780bd14d.js.map": "/curtains/static/js/main.780bd14d.js.map"
+    "main.40d6a615.css.map": "/curtains/static/css/main.40d6a615.css.map",
+    "main.5e1d7d55.js.map": "/curtains/static/js/main.5e1d7d55.js.map"
   },
   "entrypoints": [
-    "static/css/main.da2bb56b.css",
-    "static/js/main.780bd14d.js"
+    "static/css/main.40d6a615.css",
+    "static/js/main.5e1d7d55.js"
   ]
 }
