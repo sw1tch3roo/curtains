@@ -1,19 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { contactsDataSelector } from '../../redux/slices/contactsSlice';
+import { useAppSelector } from '../../redux/store';
 import ContactItem from '../contactItem/ContactItem';
 import styles from './ContactsBlock.module.scss';
 
-type ContactsDataType = {
-  id: number;
-  logo: string;
-  firstTitle: string;
-  secondTitle: string;
-  linkTo: string;
-};
-
 const ContactsBlock: React.FC = () => {
-  const { contactsData } = useSelector(contactsDataSelector);
+  const { contactsData } = useAppSelector(contactsDataSelector);
 
   const contacts = contactsData.map((contact: any) => (
     <ContactItem key={contact.id} {...contact} />

@@ -1,14 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Items, itemsSelector } from '../../redux/slices/itemsSlice';
 
 import styles from '../curtainsItem/CurtainsItem.module.scss';
 import CurtainsItem from '../curtainsItem/CurtainsItem';
 // import { AppDispatch } from '../../redux/store';
 import Loader from '../UI/loader/Loader';
+import { useAppSelector } from '../../redux/store';
 
 const CurtainsBlock: React.FC = () => {
-  const { items, status } = useSelector(itemsSelector);
+  const { items, status } = useAppSelector(itemsSelector);
   // const dispatch = useDispatch<AppDispatch>();
 
   // const getItems = async () => {

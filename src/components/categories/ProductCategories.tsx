@@ -1,14 +1,18 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { changeCategory } from '../../redux/slices/filterSlice';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 import './ProductCategories.scss';
 
 const categories: string[] = ['Все', 'Шторы', 'Портьеры', 'Тюль', 'Жалюзи'];
 
-const ProductCategories: React.FC = () => {
-  const activeCategory = useSelector((state: any) => state.filterReducer.category);
-  const dispatch = useDispatch();
+const ProductCategories: React.FC = React.memo(() => {
+  const activeCategory = useAppSelector((state) => state.filterReducer.category);
+  const dispatch = useAppDispatch();
+
+  const onChangeCategory = React.useCallback((index: number) => {
+    dispatch(changeCategory(index));
+  }, []); // создается и не пересоздается
 
   return (
     <div className="categories">
@@ -18,7 +22,7 @@ const ProductCategories: React.FC = () => {
           return (
             <li
               key={index}
-              onClick={() => dispatch(changeCategory(index))} // по индексу делаем перерендер
+              onClick={() => onChangeCategory(index)} // по индексу делаем перерендер
               className={activeCategory === index ? 'active' : ''}
             >
               {category}
@@ -28,6 +32,6 @@ const ProductCategories: React.FC = () => {
       </ul>
     </div>
   );
-};
+});
 
 export default ProductCategories;

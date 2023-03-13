@@ -16,7 +16,7 @@ const CurtainsItem: React.FC<Items> = ({ id, image, title, price }) => {
               <h3>{title}</h3>
             </div>
             <ul>
-              <li>Шторы на любой вкус</li>
+              <li>{title}</li>
               <li>Главный офис в центре города</li>
               <li>Большое количество производителей</li>
             </ul>

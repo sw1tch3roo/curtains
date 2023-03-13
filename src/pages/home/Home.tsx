@@ -7,7 +7,7 @@ import CurtainsBlock from '../../components/curtainsBlock/CurtainsBlock';
 import ProductSort from '../../components/sort/ProductSort';
 import Search from '../../components/UI/search/Search';
 
-import { filterSelector, searchSelector } from '../../redux/slices/filterSlice';
+import { changePage, filterSelector, searchSelector } from '../../redux/slices/filterSlice';
 import { fetchItems } from '../../redux/slices/itemsSlice';
 
 import qs from 'qs';
@@ -21,7 +21,17 @@ const Home: React.FC = () => {
   const isSearch = React.useRef<boolean>(false);
   const isMounted = React.useRef<boolean>(false);
 
-  // const { items, status } = useSelector(itemsSelector); // массив пицц
+  const [fetching, setFetching] = React.useState<Boolean>(true);
+
+  const scrollHandler = (e: any) => {
+    if (
+      e.target.documentElement.scrollHeight -
+        (e.target.documentElement.scrollTop + window.innerHeight) <
+      100
+    ) {
+      setFetching(true);
+    }
+  };
 
   const { category: activeCategory, sort: activeSort, currentPage } = useSelector(filterSelector);
 
@@ -50,8 +60,21 @@ const Home: React.FC = () => {
       }),
     ); // запрос на бекэнд и сохранение пицц
 
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   };
+
+  // React.useEffect(() => {
+  //   if (fetching) {
+  //     dispatch(changePage(currentPage + 1));
+  //     setFetching(false);
+  //   }
+
+  //   document.addEventListener('scroll', scrollHandler);
+
+  //   return function () {
+  //     document.removeEventListener('scroll', scrollHandler);
+  //   };
+  // }, [fetching]);
 
   // если изменились параметры и был первый рендер, то...
   React.useEffect(() => {
@@ -72,9 +95,9 @@ const Home: React.FC = () => {
   // если был первый рендер, то идет проверка URL-параметров и сохранение в Redux'е
   React.useEffect(() => {
     getProducts();
-  }, []);
+  }, [activeCategory, activeSort.sortProperty, searchValue, currentPage]);
 
-  // если был первый рендер, тогда запрашиваются пиццы
+  // // если был первый рендер, тогда запрашиваются пиццы
   React.useEffect(() => {
     window.scrollTo(0, 0); // перемещаем окно в исходное положение
 

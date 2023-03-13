@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CONTACTS_ROUTE, PRIVACY_ROUTE } from '../../utils/consts';
 import './Footer.scss';
 
-const Footer: React.FC = () => {
+const Footer: React.FC = React.memo(() => {
   const navigate = useNavigate();
 
   const nav = (route: string) => {
@@ -54,6 +54,6 @@ const Footer: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Footer;

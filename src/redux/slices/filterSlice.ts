@@ -8,7 +8,7 @@ export enum SortPropertyEnum {
 
 export type SortType = {
   name: string; // по умолчанию будет
-  sortProperty: SortPropertyEnum.TITLE_DESC | SortPropertyEnum.TITLE_ASC;
+  sortProperty: SortPropertyEnum;
 };
 
 interface IFilterState {

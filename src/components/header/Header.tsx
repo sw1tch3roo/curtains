@@ -4,7 +4,7 @@ import logo from '../../assets/img/logo.svg';
 import { ABOUT_ROUTE, CONTACTS_ROUTE, PRICE_ROUTE, SHOP_ROUTE } from '../../utils/consts';
 import styles from './Header.module.scss';
 
-const Header: React.FC = () => {
+const Header: React.FC = React.memo(() => {
   const navigate: NavigateFunction = useNavigate();
 
   const headerButtons = [
@@ -48,6 +48,6 @@ const Header: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Header;

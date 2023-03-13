@@ -1,12 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import {
   changeSort,
   filterSortSelector,
   SortPropertyEnum,
   SortType,
 } from '../../redux/slices/filterSlice';
-import { useAppDispatch } from '../../redux/store';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 import './ProductSort.scss';
 
@@ -23,7 +22,7 @@ export const ProductSort: React.FC = React.memo(() => {
   const [isOpenPopup, setIsOpenPopup] = React.useState(false); // pop-up окно сортировки
   const sortRef = React.useRef<HTMLDivElement>(null); // весь компонент сортировки
 
-  const activeSort = useSelector(filterSortSelector);
+  const activeSort = useAppSelector(filterSortSelector);
   const dispatch = useAppDispatch();
 
   const onClickListItem = (object: SortType) => {

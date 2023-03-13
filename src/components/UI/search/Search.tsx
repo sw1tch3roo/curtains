@@ -5,7 +5,7 @@ import styles from './Search.module.scss';
 import { changeSearchValue } from '../../../redux/slices/filterSlice';
 import { useAppDispatch } from '../../../redux/store';
 
-const Search: React.FC = () => {
+const Search: React.FC = React.memo(() => {
   const [value, setValue] = React.useState<string>(''); // локальный стейт для быстрого отображения данных в инпуте
   const dispatch = useAppDispatch();
 
@@ -72,6 +72,6 @@ const Search: React.FC = () => {
       )}
     </div>
   );
-};
+});
 
 export default Search;
